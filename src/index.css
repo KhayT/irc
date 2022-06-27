@@ -1,13 +1,166 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(216, 12%, 8%);
+}
+
+.content {
+  background-color: hsl(213, 19%, 18%);
+  width: 90%;
+  border-radius: 15px;
+  max-width: 375px;
+  height: 60%;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+  padding: 15px 35px;
+  font-family: "Overpass", sans-serif;
+  margin: 0 auto;
+}
+
+.main-content {
+  text-align: left;
+  padding: 1.5rem 2rem;
+}
+
+.rating--star {
+  background-image: url(./icon-star.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  background-color: hsl(213, 18%, 26%);
+  border-radius: 50%;
+  animation: rotating-star 10s infinite linear;
+}
+
+.rating--heading {
+  color: hsl(0, 0%, 100%);
+  margin: 1.5rem 0;
+}
+
+.rating--text {
+  color: hsl(217, 12%, 63%);
+  line-height: 20px;
+}
+
+.rating--btn {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.btn {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  height: 45px;
+  width: 45px;
+  background-color: hsl(213, 18%, 26%);
+  color: hsl(217, 12%, 63%);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.btn--special {
+  background-color: hsl(217, 12%, 63%);
+  color: white;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: hsl(25, 97%, 53%);
+  color: white;
+}
+
+.btn-submit {
+  outline: none;
+  width: 100%;
+  height: 50px;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(25, 97%, 53%);
+  transition: background-color 0.2s ease-in;
+  text-transform: uppercase;
+}
+
+.btn-submit:hover {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(25, 97%, 53%);
+  cursor: pointer;
+}
+
+.thank--you_card {
+  text-align: center;
+  padding: 1.5rem 2rem;
+}
+
+.score--board_img {
+  background-image: url(./illustration-thank-you.svg);
+  height: 108px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.score--board {
+  height: 35px;
+  width: 70%;
+  margin: 1.5rem auto;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210, 14%, 23%);
+  color: hsl(25, 97%, 40%);
+  font-weight: lighter;
+}
+
+.score--board_text {
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+  margin-bottom: 1rem;
+}
+
+.thank--you_card p {
+  line-height: 1.4rem;
+  color: hsl(217, 12%, 63%);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rotating-star {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .content {
+    padding: 1rem 10px;
+  }
 }
